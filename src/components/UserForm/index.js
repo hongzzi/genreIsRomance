@@ -4,7 +4,23 @@ import { Checkbox, Form, TextArea } from 'semantic-ui-react';
 
 import Button from '../Common/Button';
 
-export default () => {
+import NoAbatar from '../../assets/image/no-image.png';
+
+function UserForm() {
+    const [imageValue, setImageValue] = React.useState(NoAbatar);
+    const handleImageUpload = (event) => {
+        const reader = new FileReader();
+        reader.onloadend = (e) => {
+            const base64 = reader.result;
+            if (base64) {
+                setImageValue(base64.toString());
+            }
+        };
+        if (event.target.files[0]) {
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    };
+
     return (
         <FormWrapper>
             <FormHeader>로맨스 매표소</FormHeader>
@@ -12,14 +28,14 @@ export default () => {
                 <Form.Field>
                     <FileContainer>
                         <FileLabelContainer htmlFor="img-file">
-                            <ImageContainer src="test.png" />
+                            <ImageContainer src={imageValue} />
                             <p>두번째로 잘나온 사진을 1장 올려주세요 </p>
                         </FileLabelContainer>
                         <FileInputContainer
                             id={'img-file'}
                             type={'file'}
-                            multiple
                             accept={'image/png, image/jpeg, image/jpg'}
+                            onChange={handleImageUpload}
                         />
                     </FileContainer>
                 </Form.Field>
@@ -54,13 +70,13 @@ export default () => {
             </Form>
         </FormWrapper>
     );
-};
+}
 
 const FormWrapper = styled.div`
     position: relative;
-    max-width: 500px;
+    max-width: 520px;
     margin: auto;
-    padding: 0 1rem;
+    padding: 1rem 1rem;
 `;
 
 const FormHeader = styled.h2`
@@ -102,17 +118,20 @@ const ImageContainer = styled.img`
     height: 200px;
     border-radius: 1.5rem;
     object-fit: cover;
+    overflow: hidden;
 `;
 
 const PhoneInputContainer = styled.input`
+    background: ${(props) => props.theme.whiteColor} !important;
     width: 200px;
     height: 3rem;
     border: 0px solid;
     border-radius: 0.6rem;
-    padding: 1rem;
+    padding: 0.6rem 1rem;
 `;
 
 const MovieInputContainer = styled.input`
+    background: ${(props) => props.theme.whiteColor} !important;
     width: 500px;
     height: 3rem;
     border: 0px solid;
@@ -122,12 +141,13 @@ const MovieInputContainer = styled.input`
 
 const LabelColor = styled.label`
     color: ${(props) => props.theme.textColor} !important;
-    padding: 8px 0 2px 0;
+    padding: 1rem 0 2px 0;
     font-family: 'Noto Sans KR' !important;
     font-weight: normal !important;
 `;
 
 const TextContainer = styled(TextArea)`
+    background: ${(props) => props.theme.whiteColor} !important;
     width: 500px;
     height: 6rem;
     padding: 1rem 0;
@@ -141,4 +161,6 @@ const SubmitContainer = styled.div`
     width: 100%;
     height: 100%;
     padding: 2rem 0.5rem 0 0.5rem;
-`
+`;
+
+export default UserForm;
