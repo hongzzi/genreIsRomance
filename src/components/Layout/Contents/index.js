@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Route, Switch } from 'react-router-dom';
-import { Home, About, UserForm } from '../../../pages';
+import { Home, About, UserForm, UserInfo } from '../../../pages';
 
 function Contents() {
     return (
@@ -11,6 +11,7 @@ function Contents() {
                 <Route path="/about/:userId" component={About} />
                 <Route path="/about" component={About} />
                 <Route path="/user/form" component={UserForm} />
+                <Route path="/user/info" component={UserInfo} />
             </Switch>
         </Wrapper>
     );

@@ -5,6 +5,7 @@ import { Checkbox, Form, TextArea } from 'semantic-ui-react';
 import Button from '../Common/Button';
 
 import NoAbatar from '../../assets/image/no-image.png';
+import IconMovie from '../../assets/image/icon-movie.png';
 
 function UserForm() {
     const [imageValue, setImageValue] = React.useState(NoAbatar);
