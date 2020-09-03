@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "CI= react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -41,6 +41,5 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.2"
-  },
-  "homepage": "[URL]"
+  }
 }
