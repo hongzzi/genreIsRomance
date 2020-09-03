@@ -72,7 +72,7 @@ const CardContainer = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-    width: auto;
+    width: 100%;
     max-width: 520px;
     margin: auto;
     padding: 1.5rem;
@@ -111,13 +111,15 @@ const HeaderContainer = styled.div`
 
 const ContentsContainer = styled.div`
     width: 100%;
+    height: auto;
     font-size: 1.1rem;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.7rem;
     letter-spacing: normal;
-    white-space: pre;
+    word-break: normal;
+    /* white-space: pre; */
     padding: 1rem 0 2.5rem 0;
 `;
 

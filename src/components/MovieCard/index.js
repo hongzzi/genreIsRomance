@@ -39,7 +39,7 @@ const CardWrapper = styled.div`
     position: relative;
     max-width: 620px;
     margin: auto;
-    padding: 1rem 1rem;
+    padding: 1rem;
 `;
 
 const CardHeader = styled.div`

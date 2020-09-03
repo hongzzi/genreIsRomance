@@ -22,7 +22,9 @@ const GlobalStyle = createGlobalStyle`
         font-family: "Noto Sans KR";
         margin: 0;
         padding: 0;
-    }
+        -ms-overflow-style: none; 
+    };
+    ::-webkit-scrollbar { display: none; };
 `;
 
 export default Root;

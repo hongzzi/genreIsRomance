@@ -16,11 +16,12 @@ export default (props) => {
         <WrapperHeader>
             <Container>
                 <IconWrapper>
-                    <Icon size="big" name="heart" />
+                     
+                    {/* <Icon size="big" name="heart" /> */}
                 </IconWrapper>
                 <Nav visible={visible} setVisible={setVisible} />
                 <IconWrapper onClick={handlerSidebar}>
-                    <Icon size="big" name="bars" />
+                    <Icon size="big" name="bars" color="grey"/>
                 </IconWrapper>
             </Container>
         </WrapperHeader>

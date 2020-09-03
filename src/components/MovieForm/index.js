@@ -11,21 +11,21 @@ function MovieForm() {
             <Hr />
             <ContentWrapper>
                 <IconWrapper>
-                    <img src={TicketIcon} width={74} />
+                    <ImageComponent src={TicketIcon} width={74} />
                 </IconWrapper>
                 <HeaderContainer>
                     {'상대와 함께 볼 영화를 입력해주세요.'}
                 </HeaderContainer>
                 <TimeTableContainer>
-                    <a href="http://www.cgv.co.kr/reserve/show-times/" target="_blank">
+                    <HrefLink href="http://www.cgv.co.kr/reserve/show-times/" target="_blank">
                         CGV 시간표 - 바로가기
-                    </a>
-                    <a href="https://megabox.co.kr/booking/timetable" target="_blank">
+                    </HrefLink>
+                    <HrefLink href="https://megabox.co.kr/booking/timetable" target="_blank">
                         메가박스 시간표 - 바로가기
-                    </a>
-                    <a href="https://www.lottecinema.co.kr/NLCHS/Ticketing/Schedule" target="_blank">
+                    </HrefLink>
+                    <HrefLink href="https://www.lottecinema.co.kr/NLCHS/Ticketing/Schedule" target="_blank">
                         롯데시네마 시간표 - 바로가기
-                    </a>
+                    </HrefLink>
                 </TimeTableContainer>
                 <ContentsContainer>
                     {
@@ -58,7 +58,7 @@ const CardWrapper = styled.div`
     position: relative;
     max-width: 620px;
     margin: auto;
-    padding: 1rem 1rem;
+    padding: 1rem;
 `;
 
 const CardHeader = styled.div`
@@ -171,5 +171,11 @@ const ButtonContainer = styled.div`
     justify-content: space-around;
     padding: 2rem 0 0 0;
 `;
+
+const ImageComponent = styled.img`
+`
+
+const HrefLink = styled.a`
+`
 
 export default MovieForm;

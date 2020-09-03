@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { Icon, Menu, Sidebar } from 'semantic-ui-react';
 
 import Contents from '../Contents';
@@ -9,34 +9,50 @@ const Nav = (props) => {
 
     return (
         // <Sidebar.Pushable>
-            <Sidebar dimmed={visible}
-                as={Menu}
-                animation="overlay"
-                direction="right"
-                icon="labeled"
-                inverted
-                onHide={() => setVisible(false)}
-                vertical
-                visible={visible}
-                width="thin"
-            >
-                <Menu.Item as="a">
-                    빈칸
-                </Menu.Item>
-                <Menu.Item as="a">
+        <Sidebar
+            as={Menu}
+            animation="overlay"
+            direction="right"
+            icon="labeled"
+            inverted
+            onHide={() => setVisible(false)}
+            vertical
+            visible={visible}
+            width="thin"
+        >
+            <Menu.Item as="a"></Menu.Item>
+            <Link to="/">
+                <Menu.Item>
                     <Icon name="film" />
                     장르는로맨스
                 </Menu.Item>
-                <Menu.Item as="a">
+            </Link>
+            <Link to="/user/form">
+                <Menu.Item>
                     <Icon name="ticket" />
-                    예매현황
+                    유저폼
                 </Menu.Item>
-                <Menu.Item as="a">
+            </Link>
+            <Link to="/user/info">
+                <Menu.Item>
+                    <Icon name="ticket" />
+                    유저카드
+                </Menu.Item>
+            </Link>
+            <Link to="/movie/form">
+                <Menu.Item>
                     <Icon name="clipboard" />
-                    후기게시판
+                    티켓폼
                 </Menu.Item>
-            </Sidebar>
-            /* <Sidebar.Pusher dimmed={visible}>
+            </Link>
+            <Link to="/movie/info">
+                <Menu.Item>
+                    <Icon name="clipboard" />
+                    티켓카드
+                </Menu.Item>
+            </Link>
+        </Sidebar>
+        /* <Sidebar.Pusher dimmed={visible}>
                 <Contents />
             </Sidebar.Pusher>
         /* </Sidebar.Pushable> */
