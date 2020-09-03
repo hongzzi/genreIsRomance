@@ -12,5 +12,5 @@ const ButtonContainer = styled.span`
     color: ${props => props.theme.pointColor};
     border: 1px solid ${props => props.theme.pointColor};
     border-radius: 1rem;
-    padding: 1rem 3rem;
+    padding: 1rem 4rem;
 `;

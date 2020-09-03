@@ -7,7 +7,7 @@ import MovieIcon from '../../assets/image/icon-movie.png';
 function UserCard() {
     return (
         <CardWrapper>
-            <CardHeader>Shall we Movie</CardHeader>
+            <CardHeader>shalL we mOViE</CardHeader>
             <IconWrapper>
                 <img src={MovieIcon} width={74} />
             </IconWrapper>
@@ -117,6 +117,7 @@ const ContentsContainer = styled.div`
     font-style: normal;
     line-height: 1.7rem;
     letter-spacing: normal;
+    white-space: pre;
     padding: 1rem 0 2.5rem 0;
 `;
 

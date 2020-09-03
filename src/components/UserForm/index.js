@@ -129,6 +129,9 @@ const PhoneInputContainer = styled.input`
     border: 0px solid;
     border-radius: 0.6rem;
     padding: 0.6rem 1rem;
+    :focus {
+        outline: none !important;
+    }
 `;
 
 const MovieInputContainer = styled.input`
@@ -138,6 +141,9 @@ const MovieInputContainer = styled.input`
     border: 0px solid;
     border-radius: 0.6rem !important;
     padding: 1.5rem 1rem !important;
+    :focus {
+        outline: none !important;
+    }
 `;
 
 const LabelColor = styled.label`
@@ -154,6 +160,9 @@ const TextContainer = styled(TextArea)`
     padding: 1rem 0;
     border: 0px solid;
     border-radius: 0.6rem !important;
+    :focus {
+        outline: none !important;
+    }
 `;
 
 const SubmitContainer = styled.div`

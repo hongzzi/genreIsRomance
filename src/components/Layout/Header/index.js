@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { Icon } from 'semantic-ui-react';
 
+import Nav from '../Nav';
+
 export default (props) => {
-  const { visible, setVisible } = props;
+    const { visible, setVisible } = props;
 
     const handlerSidebar = (event) => {
         console.log('click');
@@ -13,21 +15,26 @@ export default (props) => {
     return (
         <WrapperHeader>
             <Container>
-                <IconWrapper size="large" name="heart" />
-                <IconWrapper size="large" name="bars" onClick={handlerSidebar} />
+                <IconWrapper>
+                    <Icon size="big" name="heart" />
+                </IconWrapper>
+                <Nav visible={visible} setVisible={setVisible} />
+                <IconWrapper onClick={handlerSidebar}>
+                    <Icon size="big" name="bars" />
+                </IconWrapper>
             </Container>
         </WrapperHeader>
     );
 };
 
 const WrapperHeader = styled.header`
-    z-index: 2;
+    z-index: 1;
     /* background: ${(props) => props.theme.mainColor}; */
     /* opacity: 0.5; */
     position: fixed;
     width: 100%;
-    height: 4rem;
-    padding: 2rem 1.5rem;
+    height: auto;
+    padding: 1.5rem;
 `;
 
 const Container = styled.div`
@@ -37,6 +44,8 @@ const Container = styled.div`
     margin: auto;
 `;
 
-const IconWrapper = styled(Icon)`
-    /* padding: 1rem; */
-`
+const IconWrapper = styled.div`
+    width: auto;
+    height: auto;
+    padding: 0.5rem;
+`;
