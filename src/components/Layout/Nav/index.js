@@ -2,13 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon, Menu, Sidebar } from 'semantic-ui-react';
 
-import Contents from '../Contents';
-
 const Nav = (props) => {
     const { visible, setVisible } = props;
 
     return (
-        // <Sidebar.Pushable>
         <Sidebar
             as={Menu}
             animation="overlay"
@@ -52,10 +49,6 @@ const Nav = (props) => {
                 </Menu.Item>
             </Link>
         </Sidebar>
-        /* <Sidebar.Pusher dimmed={visible}>
-                <Contents />
-            </Sidebar.Pusher>
-        /* </Sidebar.Pushable> */
     );
 };
 

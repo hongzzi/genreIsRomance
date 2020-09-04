@@ -8,17 +8,12 @@ export default (props) => {
     const { visible, setVisible } = props;
 
     const handlerSidebar = (event) => {
-        console.log('click');
         setVisible(!visible);
     };
 
     return (
         <WrapperHeader>
             <Container>
-                <IconWrapper>
-                     
-                    {/* <Icon size="big" name="heart" /> */}
-                </IconWrapper>
                 <Nav visible={visible} setVisible={setVisible} />
                 <IconWrapper onClick={handlerSidebar}>
                     <Icon size="big" name="bars" color="grey"/>
@@ -30,8 +25,6 @@ export default (props) => {
 
 const WrapperHeader = styled.header`
     z-index: 1;
-    /* background: ${(props) => props.theme.mainColor}; */
-    /* opacity: 0.5; */
     position: fixed;
     width: 100%;
     height: auto;
@@ -40,7 +33,7 @@ const WrapperHeader = styled.header`
 
 const Container = styled.div`
     display: flex;
-    justify-content: space-between;
+    flex-direction: row-reverse;
     max-width: 960px;
     margin: auto;
 `;

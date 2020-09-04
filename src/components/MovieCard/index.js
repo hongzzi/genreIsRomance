@@ -11,12 +11,13 @@ function MovieCard() {
             <Hr />
             <ContentWrapper>
                 <IconWrapper>
-                    <img src={TicketIcon} width={74} />
+                    <IconBox src={TicketIcon}/>
                 </IconWrapper>
                 <HeaderContainer>
                     {'상대가 보낸 시간표 중 선택해주세요 !'}
                 </HeaderContainer>
                 <InputBox>
+                    {/** map으로 변경하기 */}
                     <TicketsContainer>
                         {'날짜 / 영화관 / 영화 / 시간'}
                     </TicketsContainer>
@@ -129,4 +130,7 @@ const ButtonContainer = styled.div`
     padding: 2rem 0 0 0;
 `;
 
+const IconBox = styled.img`
+    width: 74px;
+`
 export default MovieCard;

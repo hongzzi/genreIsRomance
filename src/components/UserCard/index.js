@@ -9,7 +9,7 @@ function UserCard() {
         <CardWrapper>
             <CardHeader>shalL we mOViE</CardHeader>
             <IconWrapper>
-                <img src={MovieIcon} width={74} />
+                <img src={MovieIcon} width={74} alt={'movie-icon'}/>
             </IconWrapper>
             <CardContainer>
                 <ImageContainer>

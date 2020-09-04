@@ -7,7 +7,10 @@ export default ( {text} ) => (
     </ButtonContainer>
 )
 
-const ButtonContainer = styled.span`
+const ButtonContainer = styled.div`
+    :hover {
+        cursor: pointer;
+    }
     font-size: 1.3rem;
     color: ${props => props.theme.pointColor};
     border: 1px solid ${props => props.theme.pointColor};

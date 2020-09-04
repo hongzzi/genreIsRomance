@@ -5,6 +5,21 @@ import Button from '../Common/Button';
 import TicketIcon from '../../assets/image/icon-ticket.png';
 
 function MovieForm() {
+    const [timeList, setTimeList] = React.useState({
+        first: '',
+        second: '',
+        third: '',
+    });
+
+    const handleChange = (event) => {
+        setTimeList({ ...timeList, [event.target.name]: event.target.value });
+    };
+
+    const handleSubmit = () => {
+        // axios 날리는 부분
+        console.log(timeList);
+    }
+
     return (
         <CardWrapper>
             <CardHeader>🎉 매칭이 성사되었습니다! 🎉</CardHeader>
@@ -17,13 +32,22 @@ function MovieForm() {
                     {'상대와 함께 볼 영화를 입력해주세요.'}
                 </HeaderContainer>
                 <TimeTableContainer>
-                    <HrefLink href="http://www.cgv.co.kr/reserve/show-times/" target="_blank">
+                    <HrefLink
+                        href="http://www.cgv.co.kr/reserve/show-times/"
+                        target="_blank"
+                    >
                         CGV 시간표 - 바로가기
                     </HrefLink>
-                    <HrefLink href="https://megabox.co.kr/booking/timetable" target="_blank">
+                    <HrefLink
+                        href="https://megabox.co.kr/booking/timetable"
+                        target="_blank"
+                    >
                         메가박스 시간표 - 바로가기
                     </HrefLink>
-                    <HrefLink href="https://www.lottecinema.co.kr/NLCHS/Ticketing/Schedule" target="_blank">
+                    <HrefLink
+                        href="https://www.lottecinema.co.kr/NLCHS/Ticketing/Schedule"
+                        target="_blank"
+                    >
                         롯데시네마 시간표 - 바로가기
                     </HrefLink>
                 </TimeTableContainer>
@@ -36,19 +60,30 @@ function MovieForm() {
                     <InputContainer
                         type={'text'}
                         placeholder={'날짜 / 영화관 / 영화 / 시간'}
+                        name="first"
+                        value={timeList.first}
+                        onChange={handleChange}
                     />
                     <InputContainer
                         type={'text'}
                         placeholder={'날짜 / 영화관 / 영화 / 시간'}
+                        name="second"
+                        value={timeList.second}
+                        onChange={handleChange}
                     />
                     <InputContainer
                         type={'text'}
                         placeholder={'날짜 / 영화관 / 영화 / 시간'}
+                        name="third"
+                        value={timeList.third}
+                        onChange={handleChange}
                     />
                 </InputBox>
             </ContentWrapper>
             <ButtonContainer>
-                <Button text={'제안하기'} />
+                <BtnWrapper onClick={handleSubmit}>
+                    <Button text={'제안하기'} />
+                </BtnWrapper>
             </ButtonContainer>
         </CardWrapper>
     );
@@ -160,7 +195,7 @@ const InputContainer = styled.input`
     :focus {
         outline: none !important;
         ::placeholder {
-            color:transparent;
+            color: transparent;
         }
     }
 `;
@@ -172,10 +207,12 @@ const ButtonContainer = styled.div`
     padding: 2rem 0 0 0;
 `;
 
-const ImageComponent = styled.img`
-`
+const ImageComponent = styled.img``;
 
-const HrefLink = styled.a`
-`
+const HrefLink = styled.a``;
+
+const BtnWrapper = styled.div``;
+
+const EmojiSpan = styled.span``;
 
 export default MovieForm;
