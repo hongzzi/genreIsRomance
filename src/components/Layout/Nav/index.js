@@ -24,6 +24,12 @@ const Nav = (props) => {
                     장르는로맨스
                 </Menu.Item>
             </Link>
+            <Link to="/login">
+                <Menu.Item>
+                    <Icon name="lock" />
+                    카카오 로그인
+                </Menu.Item>
+            </Link>
             <Link to="/user/form">
                 <Menu.Item>
                     <Icon name="ticket" />

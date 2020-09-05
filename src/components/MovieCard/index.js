@@ -5,6 +5,12 @@ import Button from '../Common/Button';
 import TicketIcon from '../../assets/image/icon-ticket.png';
 
 function MovieCard() {
+    const [ choice, setChoice ] = React.useState('');
+
+    const handleSubmit = () => {
+        console.log(choice);
+    }
+
     return (
         <CardWrapper>
             <CardHeader>🎉 매칭이 성사되었습니다! 🎉</CardHeader>
@@ -17,7 +23,6 @@ function MovieCard() {
                     {'상대가 보낸 시간표 중 선택해주세요 !'}
                 </HeaderContainer>
                 <InputBox>
-                    {/** map으로 변경하기 */}
                     <TicketsContainer>
                         {'날짜 / 영화관 / 영화 / 시간'}
                     </TicketsContainer>

@@ -26,7 +26,7 @@ function MovieForm() {
             <Hr />
             <ContentWrapper>
                 <IconWrapper>
-                    <ImageComponent src={TicketIcon} width={74} />
+                    <ImageComponent src={TicketIcon} />
                 </IconWrapper>
                 <HeaderContainer>
                     {'상대와 함께 볼 영화를 입력해주세요.'}
@@ -207,7 +207,9 @@ const ButtonContainer = styled.div`
     padding: 2rem 0 0 0;
 `;
 
-const ImageComponent = styled.img``;
+const ImageComponent = styled.img`
+    width: 74px; 
+`;
 
 const HrefLink = styled.a``;
 
