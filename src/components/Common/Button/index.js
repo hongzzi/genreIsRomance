@@ -10,6 +10,8 @@ export default ( {text} ) => (
 const ButtonContainer = styled.div`
     :hover {
         cursor: pointer;
+        background: ${props => props.theme.pointColor};
+        color: ${props => props.theme.pureWhiteColor};
     }
     font-size: 1.3rem;
     color: ${props => props.theme.pointColor};

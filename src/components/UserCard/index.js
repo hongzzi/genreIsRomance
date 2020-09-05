@@ -22,7 +22,7 @@ function UserCard() {
                     <Hr />
                     <ContentsContainer>
                         {
-                            '주인공이 산책하는 밤길과, 마지막에 빗속에서 걷는 다리위를 가보고싶어dssss요dyddydddyd'
+                            '주인공이 산책하는 밤길과, 마지막에 빗속에서 걷는 다리가 인상깊었어요.\n유럽여행을 가면 가보고싶은 곳입니다.'
                         }
                     </ContentsContainer>
                     <HeaderContainer>
@@ -119,7 +119,7 @@ const ContentsContainer = styled.div`
     line-height: 1.7rem;
     letter-spacing: normal;
     word-break: normal;
-    /* white-space: pre; */
+    white-space: pre;
     padding: 1rem 0 2.5rem 0;
 `;
 

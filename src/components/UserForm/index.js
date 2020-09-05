@@ -17,6 +17,11 @@ function UserForm() {
         sentence: '',
     });
 
+    const [genderBtn, setGenderBtn] = React.useState({
+        F: false,
+        M: true,
+    });
+
     // change handlers
     // image file
     const handleImageUpload = (event) => {
@@ -32,18 +37,31 @@ function UserForm() {
             setValue({ ...value, postImage: event.target.files[0] });
         }
     };
-    // radio button
-    const handleRadioChange = (event, v) => {
-        setValue({ ...value, [v.name]: v.value });
-    }
+
     // input
     const handleChange = (event) => {
         setValue({ ...value, [event.target.name]: event.target.value });
     };
 
     const handleSubmit = () => {
-        console.log(value);
-        // axios 날리는 부분
+        for (const key in value) {
+            if (value.hasOwnProperty(key)) {
+                if(value[key] === '') {
+                    alert('입력하지 않은 칸이 존재합니다!');
+                    break;
+                };
+            }
+        }
+    };
+
+    const handleToggleBtnM = () => {
+        setGenderBtn({ M: true, F: false });
+        setValue({...value, gender: "남자"});
+    };
+
+    const handleToggleBtnF = () => {
+        setGenderBtn({ M: false, F: true });
+        setValue({...value, gender: "여자"});
     };
 
     return (
@@ -67,22 +85,12 @@ function UserForm() {
                 </Form.Field>
                 <LabelColor>성별</LabelColor>
                 <RadioBox>
-                        <RadioLabel for="radio-man">남자</RadioLabel>
-                        <RadioCustom
-                            id="radio-man"
-                            name="gender"
-                            value="남자"
-                            checked={value.gender === '남자'}
-                            onChange={handleRadioChange}
-                        />
-                        <RadioLabel for="radio-woman">여자</RadioLabel>
-                        <RadioCustom
-                            id="radio-woman"
-                            name="gender"
-                            value="여자"
-                            checked={value.gender === '여자'}
-                            onChange={handleRadioChange}
-                        />
+                    <ToggleBtn bgColor={genderBtn.M} onClick={handleToggleBtnM}>
+                        남자
+                    </ToggleBtn>
+                    <ToggleBtn bgColor={genderBtn.F} onClick={handleToggleBtnF}>
+                        여자
+                    </ToggleBtn>
                 </RadioBox>
 
                 <Form.Field>
@@ -93,6 +101,7 @@ function UserForm() {
                         name="number"
                         value={value.number}
                         onChange={handleChange}
+                        required
                     />
                 </Form.Field>
 
@@ -104,6 +113,7 @@ function UserForm() {
                         name="movie"
                         value={value.movie}
                         onChange={handleChange}
+                        required
                     />
                 </Form.Field>
                 <Form.Field>
@@ -113,6 +123,7 @@ function UserForm() {
                         name="memory"
                         value={value.memory}
                         onChange={handleChange}
+                        required
                     />
                 </Form.Field>
                 <Form.Field>
@@ -124,17 +135,26 @@ function UserForm() {
                         name="sentence"
                         value={value.sentence}
                         onChange={handleChange}
+                        required
                     />
                 </Form.Field>
                 <SubmitContainer>
                     <BtnWrapper onClick={handleSubmit}>
-                    <Button text={'제출하기'} onClick={handleSubmit} />
+                        <Button text={'제출하기'} onClick={handleSubmit} />
                     </BtnWrapper>
                 </SubmitContainer>
             </Form>
         </FormWrapper>
     );
 }
+
+const ToggleBtn = styled.div`
+    padding: 1rem 2.6rem;
+    background-color: ${(props) => (props.bgColor ? props.theme.pointColor : props.theme.whiteColor)};
+    color: ${(props) => (props.bgColor ? props.theme.textGray : props.theme.whiteGray)};
+    border-radius: 7px;
+    cursor: pointer;
+`;
 
 const FormWrapper = styled.div`
     position: relative;
@@ -210,7 +230,7 @@ const MovieInputContainer = styled.input`
 `;
 
 const LabelColor = styled.label`
-    color: ${(props) => props.theme.whiteGray} !important;
+    color: ${(props) => props.theme.grayColor} !important;
     padding: 1rem 0 2px 0;
     font-family: 'Noto Sans KR' !important;
     font-weight: normal !important;
@@ -242,21 +262,10 @@ const RadioBox = styled.div`
     align-items: center;
     align-content: center;
     justify-content: space-between;
-    padding: 1rem 0 ;
+    padding: 1rem 0;
     border-bottom: solid 1px #444;
 `;
 
-const RadioLabel = styled.label`
-    color: ${(props) => props.theme.textColor} !important;
-    /* padding: 1rem 0 2px 0; */
-    font-family: 'Noto Sans KR' !important;
-    font-weight: normal !important;
-`
-
-const RadioCustom = styled(Radio)`
-`;
-
-const BtnWrapper = styled.div`
-`
+const BtnWrapper = styled.div``;
 
 export default UserForm;

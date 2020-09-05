@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import KaKaoLogin from 'react-kakao-login';
 
@@ -49,4 +49,5 @@ const KakaoLoginBtn = styled(KaKaoLogin)`
     background: #ffd400;
     padding: 1rem;
     border: none;
+    cursor: pointer;
 `

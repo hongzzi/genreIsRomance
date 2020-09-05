@@ -215,6 +215,4 @@ const HrefLink = styled.a``;
 
 const BtnWrapper = styled.div``;
 
-const EmojiSpan = styled.span``;
-
 export default MovieForm;

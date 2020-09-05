@@ -42,4 +42,5 @@ const IconWrapper = styled.div`
     width: auto;
     height: auto;
     padding: 0.5rem;
+    cursor: pointer;
 `;
