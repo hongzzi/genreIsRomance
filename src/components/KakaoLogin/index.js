@@ -3,11 +3,12 @@ import styled from 'styled-components';
 import KaKaoLogin from 'react-kakao-login';
 
 export default () => {
-    const [auth, setAuth] = React.useState({});
-
     const responseKakao = (res) => {
-        console.log(res);
-        setAuth({ ...auth, data: res });
+        const data = {
+            access_token: res.response.access_token,
+            refresh_token: res.response.refresh_token
+        }
+        // 서버에 회원가입 혹은 로그인 요청
     };
 
     const responseFail = (err) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Form, Radio, TextArea } from 'semantic-ui-react';
+import { Form, TextArea } from 'semantic-ui-react';
 
 import Button from '../Common/Button';
 import NoAbatar from '../../assets/image/no-image.png';

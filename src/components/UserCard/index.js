@@ -5,11 +5,20 @@ import NoAbatar from '../../assets/image/no-image.png';
 import MovieIcon from '../../assets/image/icon-movie.png';
 
 function UserCard() {
+    const handleAccept = () => {
+        // 승낙 axios 날리는 부분
+        console.log();
+    };
+    const handleReject = () => {
+        // 거절 axios 날리는 부분
+        console.log();
+    };
+
     return (
         <CardWrapper>
             <CardHeader>shalL we mOViE</CardHeader>
             <IconWrapper>
-                <img src={MovieIcon} width={74} alt={'movie-icon'}/>
+                <img src={MovieIcon} width={74} alt={'movie-icon'} />
             </IconWrapper>
             <CardContainer>
                 <ImageContainer>
@@ -34,6 +43,23 @@ function UserCard() {
                     </ContentsContainer>
                 </ContentWrapper>
             </CardContainer>
+            <MessageContainer>
+                상대가 마음에 든다면{' '}
+                <MessageSpan color={'pointColor'}> 로맨스 </MessageSpan>를
+            </MessageContainer>
+            <MessageContainer>
+                다른 상대를 찾고싶다면{' '}
+                <MessageSpan color={'secondGrayColor'}> 다큐 </MessageSpan>를
+                눌러주세요.
+            </MessageContainer>
+            <ButtonContainer>
+                <BtnWrapper onClick={handleReject}>
+                    <RejectBtn>다큐</RejectBtn>
+                </BtnWrapper>
+                <BtnWrapper onClick={handleAccept}>
+                    <AcceptBtn>로맨스</AcceptBtn>
+                </BtnWrapper>
+            </ButtonContainer>
         </CardWrapper>
     );
 }
@@ -58,7 +84,7 @@ const IconWrapper = styled.div`
     justify-content: center;
     align-items: center;
     padding: 0 1rem 0.3rem 1rem;
-`
+`;
 
 const CardContainer = styled.div`
     display: flex;
@@ -110,6 +136,7 @@ const HeaderContainer = styled.div`
 `;
 
 const ContentsContainer = styled.div`
+    max-width: 80vw;
     width: 100%;
     height: auto;
     font-size: 1.1rem;
@@ -119,12 +146,59 @@ const ContentsContainer = styled.div`
     line-height: 1.7rem;
     letter-spacing: normal;
     word-break: normal;
-    white-space: pre;
+    white-space: pre-line;
     padding: 1rem 0 2.5rem 0;
 `;
 
+const ButtonContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2rem 0 0 0;
+`;
+
+const BtnWrapper = styled.div``;
+
 const Hr = styled.hr`
     width: 100%;
+`;
+
+const MessageContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0 0 0;
+`;
+
+const MessageSpan = styled.span`
+    color: ${(props) => props.theme[props.color]};
+    text-decoration: underline;
+    font-weight: bold;
+`;
+
+const AcceptBtn = styled.div`
+    :hover {
+        cursor: pointer;
+        background: ${(props) => props.theme.pointColor};
+        color: ${(props) => props.theme.pureWhiteColor};
+    }
+    font-size: 1.3rem;
+    color: ${(props) => props.theme.pointColor};
+    border: 1px solid ${(props) => props.theme.pointColor};
+    border-radius: 1rem;
+    padding: 1.3rem 5rem;
+`;
+
+const RejectBtn = styled.div`
+    :hover {
+        cursor: pointer;
+        background: ${(props) => props.theme.secondGrayColor};
+        color: ${(props) => props.theme.pureWhiteColor};
+    }
+    font-size: 1.3rem;
+    color: ${(props) => props.theme.grayColor};
+    border: 1px solid ${(props) => props.theme.secondGrayColor};
+    border-radius: 1rem;
+    padding: 1.3rem 5rem;
 `;
 
 export default UserCard;

@@ -5,6 +5,7 @@ const theme = {
     whiteColor: '#efefef',
     pureWhiteColor: '#ffffff',
     textColor: '#ffffff',
+    secondGrayColor: '#676767',
     whiteGray: '#333',
     pointColor: '#f6215d',
     subPointColor: '#ffe3e3',

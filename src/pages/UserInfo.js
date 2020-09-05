@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 
 import UserCard from '../components/UserCard';
 
-export default ({location, match}) => {
+export default () => {
 
     return (
         <Fragment>
