@@ -1,68 +1,96 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# :movie_camera: 장르는 로맨스 
+> 로맨틱한 사랑을 꿈꾸는 당신, 영화 취향이 같은 상대를 찾아 데이트해보시는건 어떨까요?
 
-## Available Scripts
+![](https://assets3.thrillist.com/v1/image/1871133/414x310/crop;jpeg_quality=65.jpg)
 
-In the project directory, you can run:
+기획자 : 장르는 로맨스  
+개발자 :
+* back - 박준호
+* front - 박지홍
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Front-end
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### :hourglass: Get Start
+```
+git clone https://github.com/hongzzi/romance-front.git romance
+cd romance
+yarn install
+yarn start
+```
 
-### `yarn test`
+### :high_brightness: 배포
+```
+yarn build
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### :ticket: 프로젝트 설명
 
-### `yarn build`
+* 변경된 점
+    * cra(create-react-app)를 통해 새로 프로젝트를 만든 후 작업했습니다.
+    * 기존 프로젝트에 있던 리덕스는 사용하지 않습니다. 규모가 작고 페이지가 적은데 redux를 얹으면 무거워보이는 감이 있어서 제외했습니다.
+    * 랜딩페이지를 그대로 사용하고 싶다는 요청에 따라, 기존 프로젝트에서 랜딩페이지를 그대로 가져왔습니다. 
+    > 그 이유로 컴포넌트 구성이 랜딩페이지만 조금 다릅니다.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* React, styled-Components
+    * 리액트 컴포넌트 작업에서 styled components를 이용해 css 작업 및 모듈화를 선택했습니다.
+    * 하지만 cra를 이용했기 때문에 css, scss, .. 등 웹팩설정이 기본으로 되어있어서 다른 방법을 사용하셔도 됍니다.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* Tree
+    
+```
+── src
+│   ├── App.js      // 기본 레이아웃(헤더, 푸터)와 라우터를 담당합니다.
+│   ├── Root.js     // 전역 설정을 돕습니다. 글로벌 css설정, theme 설정 등
+│   ├── assets      // 프로젝트에서 사용하는 정적 리소스를 담고 있습니다.
+│   │   ├── css
+│   │   │   └── fonts.css
+│   │   ├── fonts
+│   │   │   ├── ...
+│   │   │   └── NotoSansKR-Thin.otf
+│   │   └── image
+│   │       ├── ...
+│   │       └── txt_your.png
+│   ├── components      // 페이지를 구성하는 컴포넌트폴더 입니다.
+│   │   ├── Common      // 공용으로 사용할 컴포넌트를 담습니다.
+│   │   │   └── Button
+│   │   │       └── index.js
+│   │   ├── KakaoLogin  // 카카오 로그인 페이지입니다.
+│   │   │   └── index.js
+│   │   ├── Landing     // origin 프로젝트에서 가져온 랜딩페이지입니다,
+│   │   │   ├── Landing.scss
+│   │   │   └── index.js
+│   │   ├── Layout
+│   │   │   ├── Footer
+│   │   │   │   └── index.js
+│   │   │   ├── Header
+│   │   │   │   └── index.js
+│   │   │   ├── Nav
+│   │   │   │   └── index.js
+│   │   │   └── index.js
+│   │   ├── MovieCard   // 제안 받은 영화시간표 목록
+│   │   │   └── index.js
+│   │   ├── MovieForm   // 제안할 영화시간표 폼
+│   │   │   └── index.js
+│   │   ├── UserCard    // 제안 받은 유저 정보
+│   │   │   └── index.js
+│   │   └── UserForm    // 나의 정보 등록
+│   │       └── index.js
+│   ├── index.js 
+│   ├── pages           // 페이지
+│   │   ├── About.js
+│   │   ├── LandingPage.js
+│   │   ├── Login.js
+│   │   ├── MovieCard.js
+│   │   ├── MovieForm.js
+│   │   ├── UserForm.js
+│   │   ├── UserInfo.js
+│   │   └── index.js
+│   ├── serviceWorker.js
+│   ├── setupTests.js
+│   └── theme           // 사용할 공통 css 정의
+│       └── index.js
+└── yarn.lock
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
