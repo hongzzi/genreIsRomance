@@ -21,7 +21,7 @@ yarn start
 
 ### :high_brightness: 배포
 ```
-yarn build
+
 ```
 
 ### :ticket: 프로젝트 설명
